@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?><odoo>
+  <data>
+    <record id="view_picking_internal_search_inherited" model="ir.ui.view">
+      <field name="name">view.picking.internal.search.inherited</field>
+      <field name="model">stock.picking</field>
+      <field name="inherit_id" ref="stock.view_picking_internal_search"/>
+      <field name="arch" type="xml">
+        <xpath expr="//filter[@name='expected_date']" position="before">
+            <filter string="Date of Transfer" name="date_done" domain="[]" context="{'group_by': 'date_done'}"/>
+        </xpath>
+      </field>
+    </record>
+  </data>
+</odoo>
